@@ -198,29 +198,7 @@
                 <li class="menu-header small text-uppercase">
                     <span class="menu-header-text">Pages</span>
                 </li>
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                        <div data-i18n="Account Settings">Account Settings</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="pages-account-settings-account.html" class="menu-link">
-                                <div data-i18n="Account">Account</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="pages-account-settings-notifications.html" class="menu-link">
-                                <div data-i18n="Notifications">Notifications</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="pages-account-settings-connections.html" class="menu-link">
-                                <div data-i18n="Connections">Connections</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
@@ -266,9 +244,9 @@
                 <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
                 <!-- Cards -->
                 <li class="menu-item">
-                    <a href="cards-basic.html" class="menu-link">
+                    <a href="{{route('panel.categoryIndex')}}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-collection"></i>
-                        <div data-i18n="Basic">Cards</div>
+                        <div data-i18n="Basic">Kategoriler</div>
                     </a>
                 </li>
                 <!-- User interface -->

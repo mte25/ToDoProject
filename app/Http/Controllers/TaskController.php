@@ -15,6 +15,9 @@ class TaskController extends Controller
         //dd($request->all());
         $request->validate([
             'title' => 'required|max:15|min:3',
+            'content' => 'required|string',
+            'status' => 'required|in:pending,completed',
+            'deadline' => 'required|date'
         ]);
 
         $task = new Task();

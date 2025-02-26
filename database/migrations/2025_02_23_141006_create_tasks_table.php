@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-
             $table->unsignedBigInteger('category_id');
-            $table->string('title')->nullable();
+            $table->string('title')->nullable()->unique();
             $table->string('content');
             $table->tinyInteger('status')->default(0)->comment('0-Yapılmadı, 1-Yapılıyor, 2-ertelendi, 3-iptal oldu');
             $table->dateTime('deadline')->nullable();

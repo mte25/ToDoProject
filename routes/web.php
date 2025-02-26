@@ -23,6 +23,7 @@ Route::get('testRoutes',function (){
 
 Route::get('/panel/tasks/create',[TaskController::class,'createPage'])->name('panel.CreateTaskPage');
 Route::post('/panel/tasks/add',[TaskController::class,'addTask'])->name('panel.addTask');
+Route::get('/panel/tasks/index',[TaskController::class,'indexPage'])->name('panel.indexTask');
 
 //task routları
 
@@ -34,4 +35,17 @@ Route::get('/panel/categories/createPage', [CategoryController::class, 'createPa
 Route::post('/panel/categories/addCategory', [CategoryController::class, 'postCategory'])->name('panel.categoryAdd');
 Route::get('/panel/categories/update/{id}', [CategoryController::class, 'updatePage'])->name('panel.categoryUpdatePage');
 Route::post('/panel/category/updatePost', [CategoryController::class, 'updateCategory'])->name('panel.updateCategory');
-//kategori route
+//parametreli form post
+Route::post('/panel/category/updatePostTest/{id}', [CategoryController::class, 'updateCategoryTest'])->name('panel.updateCategoryTest');
+Route::get('/panel/categories/deleteCategory/{id}', [CategoryController::class, 'categoryDelete'])->name('panel.categoryDelete');
+//kategori routes
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
